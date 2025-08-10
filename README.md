@@ -1,46 +1,32 @@
-# Purpiot: Null Movement & Rapid Trigger Script for AutoHotkey v2
+# Purpiot: Null Movement Script for AutoHotkey v2
 
-Purpiot is an AutoHotkey v2 script designed to enhance in-game movement and control. It combines two core functions: **null movement** to prevent conflicting directional inputs and a **customizable rapid-fire function** for a specified key.
+Purpiot is an AutoHotkey v2 script designed to improve in-game movement by preventing conflicting directional inputs. It ensures that only the last pressed key between opposing directions is registered, avoiding common movement cancellation issues in some games.
 
 ## Contents
 
-* [Features](#features)
-
-* [Installation and Usage](#installation-and-usage)
-
-* [Customization](#customization)
-
-* [Note](#note)
+- [Features](#features)  
+- [Installation and Usage](#installation-and-usage)  
+- [Customization](#customization)  
+- [Note](#note)  
 
 ## Features
 
-* **Null Movement:** This feature ensures that when you hold down two opposing directional keys (e.g., 'A' and 'D' or 'W' and 'S'), the script only sends the input for the last key pressed. This prevents a common issue in some games where holding both keys cancels all movement.
-
-* **Rapid Trigger:** When you hold down the designated rapid-trigger key (by default, the 'X' key), the script will repeatedly send a key press at a customizable speed. This is useful for actions that require rapid tapping.
+- **Null Movement:** When you hold two opposing directional keys (e.g., `A` and `D` or `W` and `S`), the script only sends input for the last key pressed. This avoids the problem where holding both cancels movement entirely.
 
 ## Installation and Usage
 
-1. **Install AutoHotkey v2:** If you don't already have it, download and install the latest version of AutoHotkey v2 from the official website.
+1. **Install AutoHotkey v2:** Download and install the latest AutoHotkey v2 from the official site if you haven’t already.
 
-2. **Save the Script:** Copy the script code and save it as an `.ahk` file (e.g., `Purpiot.ahk`).
+2. **Save the Script:** Copy the Purpiot script code and save it as a `.ahk` file (e.g., `Purpiot.ahk`).
 
-3. **Run the Script:** Double-click the `.ahk` file to run the script. It will run in the background.
+3. **Run the Script:** Double-click the `.ahk` file to run it in the background.
 
 ## Customization
 
-You can easily modify the script to suit your needs.
+- **Modify Directional Keys:** The script uses standard WASD keys by default. You can edit the scan codes or keys inside the script to fit your setup or preferences.
 
-* **Changing the Rapid Trigger Key:** To change the rapid-trigger key from 'X' to another key (e.g., 'C'), simply find the `X::` and `X Up::` lines in the script and replace `X` with your desired key.
-
-* **Adjusting the Rapid Trigger Speed:** The rapid trigger speed is controlled by the number in the `SetTimer` function. By default, it is set to `10` milliseconds.
-
-  ```
-  SetTimer () => SendInput("{Blind}{x}"), 10
-  
-  ```
-
-  A smaller number will make the rapid trigger faster, and a larger number will make it slower.
+- **Adjust Script Behavior:** For advanced users, you can tweak timing, input methods (`SendInput`), or extend functionality by editing the script directly.
 
 ## Note
 
-This script is intended for use in games where it is permitted. Please ensure you are not violating any terms of service by using this script.
+Use this script responsibly and ensure it complies with the terms of service of the game or software where you apply it.
