@@ -4,13 +4,13 @@ Purpiot is an AutoHotkey v2 script designed to enhance in-game movement and cont
 
 ## Contents
 
-* [Features](https://www.google.com/search?q=%23features)
+* [Features](https://github.com/lilacviolets/Purpiot/tree/main%23features)
 
-* [Installation and Usage](https://www.google.com/search?q=%23installation-and-usage)
+* [Installation and Usage]([https://www.google.com/search?q=](https://github.com/lilacviolets/Purpiot/tree/main%23installation-and-usage)
 
-* [Customization](https://www.google.com/search?q=%23customization)
+* [Customization]([https://www.google.com/search?q=](https://github.com/lilacviolets/Purpiot/tree/main%23customization)
 
-* [Note](https://www.google.com/search?q=%23note)
+* [Note]([https://www.google.com/search?q=](https://github.com/lilacviolets/Purpiot/tree/main%23note)
 
 ## Features
 
