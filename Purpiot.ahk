@@ -8,14 +8,15 @@
 #MaxThreadsBuffer 1
 
 OnStartup() {
-    banner := """
+    banner := "
+    (
 |'|           '   |    |   
 |||/~~|/~~\  /|/~\|/~/~|~(~
 |||\__|\__ \/ |\_/|\/_ | _)
                            
 Null Movement Script - Purpiot v1.0
 https://github.com/lilacviolets/Purpiot
-"""
+    )"
     MsgBox(banner, "Purpiot Script Loaded")
 }
 OnStartup()
@@ -137,4 +138,3 @@ global w_held := 0, s_held := 0, w_scrip := 0, s_scrip := 0
         SendInput "{Blind}{SC011 down}"
     }
 }
-
