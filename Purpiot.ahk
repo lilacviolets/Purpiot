@@ -3,24 +3,20 @@
 ; Last pressed key takes precedence, switching direction smoothly.
 
 #Requires AutoHotkey v2
-#SingleInstance force
+#SingleInstance Force
 #MaxThreads 1
 #MaxThreadsBuffer 1
 
 OnStartup() {
-    banner =
-    "
-
+    banner := """
 |'|           '   |    |   
 |||/~~|/~~\  /|/~\|/~/~|~(~
 |||\__|\__ \/ |\_/|\/_ | _)
                            
-
-                                
-    Null Movement Script - Purpiot v1.0
-    https://github.com/lilacviolets/Purpiot
-    "
-    MsgBox banner, "Purpiot Script Loaded"
+Null Movement Script - Purpiot v1.0
+https://github.com/lilacviolets/Purpiot
+"""
+    MsgBox(banner, "Purpiot Script Loaded")
 }
 OnStartup()
 
@@ -30,17 +26,13 @@ A_MaxHotkeysPerInterval := 99000000
 A_HotkeyInterval := 0
 
 ; Global key states
-global
-(
-    a_held := 0, d_held := 0, a_scrip := 0, d_scrip := 0
-    w_held := 0, s_held := 0, w_scrip := 0, s_scrip := 0
-)
+global a_held := 0, d_held := 0, a_scrip := 0, d_scrip := 0
+global w_held := 0, s_held := 0, w_scrip := 0, s_scrip := 0
 
-; Scan codes for keys
+; Scan codes for keys:
 ; W = SC011, A = SC01E, S = SC01F, D = SC020
 
 ; --- LEFT / RIGHT (A / D) ---
-
 *$SC01E:: { ; A down
     global
     a_held := 1
@@ -94,7 +86,6 @@ global
 }
 
 ; --- FORWARD / BACK (W / S) ---
-
 *$SC011:: { ; W down
     global
     w_held := 1
