@@ -1,12 +1,17 @@
 #Requires AutoHotkey v2
 #SingleInstance Force
 
-; --- Script Header ---
 OnStartup() {
-    MsgBox("
+    banner := """
+(
+|'|       '    |    |   
+|||/~~|/~~\  /|/~\|/~/~|~(~
+|||\__|\__ \/ |\_/|\/_ | _)
+                                
 Null Movement Script - Purpiot v1.0
 https://github.com/lilacviolets/Purpiot
-", "Purpiot Script Loaded", "T3")
+)"""
+    MsgBox(banner, "Purpiot Script Loaded")
 }
 OnStartup()
 
@@ -83,3 +88,4 @@ HandleMovementUp(axis, currentKey, opposingKey) {
         }
     }
 }
+
