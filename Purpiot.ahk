@@ -3,14 +3,13 @@
 
 OnStartup() {
     banner := """
-(
 |'|       '    |    |   
 |||/~~|/~~\  /|/~\|/~/~|~(~
 |||\__|\__ \/ |\_/|\/_ | _)
                                 
 Null Movement Script - Purpiot v1.0
 https://github.com/lilacviolets/Purpiot
-)"""
+"""
     MsgBox(banner, "Purpiot Script Loaded")
 }
 OnStartup()
@@ -27,14 +26,14 @@ global last_y_key := ""
 ; The 'Up' suffix is a v2-specific feature to handle key-up events.
 
 ; A / D axis (Left / Right)
-*a::  HandleMovement("x", "a", "d")
-*d::  HandleMovement("x", "d", "a")
+*a:: HandleMovement("x", "a", "d")
+*d:: HandleMovement("x", "d", "a")
 *a Up:: HandleMovementUp("x", "a", "d")
 *d Up:: HandleMovementUp("x", "d", "a")
 
 ; W / S axis (Forward / Backward)
-*w::  HandleMovement("y", "w", "s")
-*s::  HandleMovement("y", "s", "w")
+*w:: HandleMovement("y", "w", "s")
+*s:: HandleMovement("y", "s", "w")
 *w Up:: HandleMovementUp("y", "w", "s")
 *s Up:: HandleMovementUp("y", "s", "w")
 
@@ -88,4 +87,3 @@ HandleMovementUp(axis, currentKey, opposingKey) {
         }
     }
 }
-
