@@ -1,6 +1,6 @@
 ; Purpiot - Null Movement Script for AutoHotkey v2
-; Ensures only one opposing key of each pair (A/D and W/S) is held at a time.
-; Holding both causes movement in the direction of the last pressed key.
+; Prevents holding opposite movement keys simultaneously (A/D and W/S).
+; Last pressed key takes precedence, switching direction smoothly.
 
 #Requires AutoHotkey v2
 #SingleInstance force
@@ -8,19 +8,17 @@
 #MaxThreadsBuffer 1
 
 OnStartup() {
-    banner :=
-    (
+    banner =
     "
- ____                  _       _       
-|  __| _ __   ___  ___| |_ ___| |_ ___ 
-| |__ | '_ \ / _ \/ __| __/ _ \ __/ __|
-|  __|| |_) |  __/ (__| ||  __/ |_\__ \
-|_|   | .__/ \___|\___|\__\___|\__|___/
-      |_|                              
-Null Movement Script - Purpiot v1.0
-https://github.com/lilacviolets/Purpiot
-"
-    )
+     ____  _               ___  
+    | __ )| | _____      _|_ _| 
+    |  _ \\| |/ _ \\ \\ /\\ / /| | 
+    | |_) | | (_) \\ V  V / | | 
+    |____/|_|\\___/ \\_/\\_/ |___|
+                                
+    Null Movement Script - Purpiot v1.0
+    https://github.com/lilacviolets/Purpiot
+    "
     MsgBox banner, "Purpiot Script Loaded"
 }
 OnStartup()
@@ -47,11 +45,11 @@ global
     a_held := 1
     if d_scrip {
         d_scrip := 0
-        SendInput("{Blind}{SC020 up}")
+        SendInput "{Blind}{SC020 up}"
     }
     if !a_scrip {
         a_scrip := 1
-        SendInput("{Blind}{SC01E down}")
+        SendInput "{Blind}{SC01E down}"
     }
 }
 
@@ -60,11 +58,11 @@ global
     a_held := 0
     if a_scrip {
         a_scrip := 0
-        SendInput("{Blind}{SC01E up}")
+        SendInput "{Blind}{SC01E up}"
     }
     if d_held && !d_scrip {
         d_scrip := 1
-        SendInput("{Blind}{SC020 down}")
+        SendInput "{Blind}{SC020 down}"
     }
 }
 
@@ -73,11 +71,11 @@ global
     d_held := 1
     if a_scrip {
         a_scrip := 0
-        SendInput("{Blind}{SC01E up}")
+        SendInput "{Blind}{SC01E up}"
     }
     if !d_scrip {
         d_scrip := 1
-        SendInput("{Blind}{SC020 down}")
+        SendInput "{Blind}{SC020 down}"
     }
 }
 
@@ -86,11 +84,11 @@ global
     d_held := 0
     if d_scrip {
         d_scrip := 0
-        SendInput("{Blind}{SC020 up}")
+        SendInput "{Blind}{SC020 up}"
     }
     if a_held && !a_scrip {
         a_scrip := 1
-        SendInput("{Blind}{SC01E down}")
+        SendInput "{Blind}{SC01E down}"
     }
 }
 
@@ -101,11 +99,11 @@ global
     w_held := 1
     if s_scrip {
         s_scrip := 0
-        SendInput("{Blind}{SC01F up}")
+        SendInput "{Blind}{SC01F up}"
     }
     if !w_scrip {
         w_scrip := 1
-        SendInput("{Blind}{SC011 down}")
+        SendInput "{Blind}{SC011 down}"
     }
 }
 
@@ -114,11 +112,11 @@ global
     w_held := 0
     if w_scrip {
         w_scrip := 0
-        SendInput("{Blind}{SC011 up}")
+        SendInput "{Blind}{SC011 up}"
     }
     if s_held && !s_scrip {
         s_scrip := 1
-        SendInput("{Blind}{SC01F down}")
+        SendInput "{Blind}{SC01F down}"
     }
 }
 
@@ -127,11 +125,11 @@ global
     s_held := 1
     if w_scrip {
         w_scrip := 0
-        SendInput("{Blind}{SC011 up}")
+        SendInput "{Blind}{SC011 up}"
     }
     if !s_scrip {
         s_scrip := 1
-        SendInput("{Blind}{SC01F down}")
+        SendInput "{Blind}{SC01F down}"
     }
 }
 
@@ -140,10 +138,10 @@ global
     s_held := 0
     if s_scrip {
         s_scrip := 0
-        SendInput("{Blind}{SC01F up}")
+        SendInput "{Blind}{SC01F up}"
     }
     if w_held && !w_scrip {
         w_scrip := 1
-        SendInput("{Blind}{SC011 down}")
+        SendInput "{Blind}{SC011 down}"
     }
 }
