@@ -137,3 +137,4 @@ global w_held := 0, s_held := 0, w_scrip := 0, s_scrip := 0
         SendInput "{Blind}{SC011 down}"
     }
 }
+
